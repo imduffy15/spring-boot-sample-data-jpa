@@ -10,6 +10,6 @@ import java.util.List;
 public interface RestrictedRepository<T, ID extends Serializable> extends JpaRepository<T, ID> {
 
 	List<T> findAllForUser(String username);
-//	T findOneForUser(@Param("username") String username, @Param("id") ID id);
+	T findOneForUser(String username, ID id);
 
 }

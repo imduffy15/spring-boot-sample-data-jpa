@@ -2,6 +2,8 @@ package sample.data.jpa.domain;
 
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
+import org.hibernate.annotations.NamedQueries;
+import org.hibernate.annotations.NamedQuery;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +23,10 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "T_DOG")
+@NamedQueries({
+		@NamedQuery(name="Dog.findAllForUser", query="select d from Dog d where ?1 MEMBER OF d.owners"),
+		@NamedQuery(name="Dog.findOneForUser", query="select d from Dog d where ?1 MEMBER OF d.owners and d.id = ?2")
+})
 public class Dog {
 
 	@Id

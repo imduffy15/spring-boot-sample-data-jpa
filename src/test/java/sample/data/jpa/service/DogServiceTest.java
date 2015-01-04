@@ -78,10 +78,10 @@ public class DogServiceTest {
 		assert dog.getId() == dog1.getId();
 	}
 
-//	@Test
-//	public void findOneForUserTest() {
-//		Dog dog = dogService.findOneForUser("example-user1", dog1.getId());
-//		assert dog != null;
-//		assert dog.getId() == dog1.getId();
-//	}
+	@Test
+	public void findOneForUserTest() {
+		Dog dog = dogService.findOneForUser("example-user1", dog1.getId());
+		assert dog != null;
+		assert dog.getId() == dog1.getId();
+	}
 }
